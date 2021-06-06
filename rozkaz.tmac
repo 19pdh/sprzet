@@ -1,0 +1,94 @@
+.\" https://zhr.niedzwiedzinski.cyou/rozkaz.tmac/
+.\" Margines górny
+.nr HM 0.2i
+.\" Margines dolny
+.nr FM 1.5i
+.\" Margines lewy
+.po 1i
+
+.nr LL 9.6i
+.ll 9.6i
+
+.\" Wielkość czcionki i wielkość linii
+.nr PS 12
+.nr VS 14
+.fp - R NimbusRoman-Regular
+.fp - B NimbusRoman-Bold
+.fp - I NimbusRoman-Italic
+
+.ds CH
+.ds CF \v'-0.3i'\l'6.05i'
+.ds RF \v'1'Strona %
+
+.de DRUŻYNA
+.ds LH \\$*
+.ds CH \v'0.3'\l'6.05i'
+.EPS zhr.eps R 800 800
+.sp -4
+.br
+.ll 8.6i
+.ft B
+.ad l
+.ps 14
+.vs 16
+ZWIĄZEK HARCERSTWA RZECZYPOSPOLITEJ
+.sp 0.1
+.ps \n(PS)
+.vs \n(VS)
+\\$*
+.ft R
+.sp -0.8
+\l'8.6i'
+.sp 1.2
+.br
+.ll 9.6i
+.nr HM 1.2i
+..
+.
+.de DATA
+.ad r
+\\$*
+.br
+.ad b
+..
+.
+.de ROZKAZ
+.ad c
+.sp 3
+.ps 16
+.ft B
+Rozkaz \\$*
+.ft R
+.ps \n(PS)
+.br
+.ad b
+.sp 2
+..
+.
+.de CYTAT
+.sp 1
+.LP
+.ft I
+\\$1
+.ft R
+.sp 0.5
+.ad r
+.ft I
+~ \\$2
+.ft R
+.br
+.ad b
+.sp 1
+..
+.
+.de CZUWAJ
+.sp 1
+.ad c
+.ft B
+Czuwaj!
+.ft R
+.br
+.ad b
+.sp 1
+..
+.
