@@ -1,6 +1,8 @@
 #!/bin/sh
 # requirements: fzf, coreutils (or toybox, busybox etc.)
 
+dir=$(dirname $(readlink -f $0))
+
 cat > file.rozkaz << EOF
 .DRUŻYNA 19 Poznańska Drużyna Harcerzy “Puszcza”
 .sp 1
@@ -18,7 +20,7 @@ tab(,) allbox center;
 c l lw25 cw15 .
 L.p.,Zastęp,Sprzęt,Stan
 EOF
-for f in zastępy/*; do cat $f | xargs -I {} echo $(basename $f .csv),{}; done | fzf -m --bind ctrl-a:select-all,ctrl-d:deselect-all | cut -d, -f1-4 | nl -w1 -s, >> file.rozkaz
+for f in $dir/zastępy/*; do cat $f | xargs -I {} echo $(basename $f .csv),{}; done | fzf -m --bind ctrl-a:select-all,ctrl-d:deselect-all | cut -d, -f1-4 | nl -w1 -s, >> file.rozkaz
 cat >> file.rozkaz << EOF
 .TE
 
@@ -40,3 +42,5 @@ Podpis wydającego sprzęt
 .br
 EOF
 compiler file.rozkaz
+setsid -f zathura file.pdf
+vim file.rozkaz
